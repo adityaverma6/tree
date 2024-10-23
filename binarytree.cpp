@@ -31,6 +31,12 @@ node *binarytree() //insertion
     temp->right = binarytree();
     return temp;
 }
+int sum(node *root){
+    if(root == NULL) 
+        return 0;
+    return root->data +sum(root->left) +sum(root->right);
+
+}
 void preorder(node *root) // preorder traversal
 {
     if (root == NULL)
@@ -65,5 +71,6 @@ int main()
     inorder(root);
     cout << endl;
     postorder(root);
+    cout<<sum(root);
     return 0;
 }
